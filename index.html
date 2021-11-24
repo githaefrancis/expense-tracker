@@ -10,77 +10,85 @@
       integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
     <link rel="stylesheet" href="css/styles.css" />
     <title>Expenses tracker</title>
   </head>
   <body>
     <div class="container-fluid">
-      <div class="card m-auto mt-5">
-        <div class="card-header card-title text-center">
-          <h5>Expense Tracker</h5>
-        </div>
-        <div class="card-body">
-          <div class="card-text">
-            <form action="">
-              <div class="row">
-                <div class="col-3">
-                  <input type="date" class="form-control" name="date" id="" />
-                </div>
-                <div class="col-5">
-                  <input
-                    type="text"
-                    class="form-control"
-                    name="description"
-                    id=""
-                    placeholder="Description"
-                  />
-                </div>
-                <div class="col-2">
-                  <input
-                    type="number"
-                    class="form-control"
-                    name="amount"
-                    id=""
-                    placeholder="Ksh"
-                  />
-                </div>
-                <div class="col-2">
-                  <input
-                    type="Submit"
-                    class="form-control btn btn-primary"
-                    value="Add"
-                    name=""
-                    id=""
-                  />
-                </div>
-              </div>
-            </form>
+      <div class="container">
+        <div class="card m-auto mt-5">
+          <div class="card-header card-title text-center">
+            <h5>Expense Tracker</h5>
           </div>
-        </div>
-        <table class="table table-striped">
-          <thead>
-            <tr class="">
-              <th scope="col">#</th>
-              <th class="" scope="col">Date</th>
-              <th class="" scope="col">Description</th>
-              <th scope="col">Amount</th>
-              
-              
-            </tr>
-          </thead>
-          <tbody id="expense-list">
-            <!-- <tr>
+          <div class="card-body">
+            <div class="card-text">
+              <form action="">
+                <div class="container">
+                  <div class="row">
+                    <div class="col-lg-3 col-sm-12">
+                      <input
+                        type="date"
+                        class="form-control"
+                        name="date"
+                        id=""
+                      />
+                    </div>
+                    <div class="col-lg-5 col-sm-12">
+                      <input
+                        type="text"
+                        class="form-control"
+                        name="description"
+                        id=""
+                        placeholder="Description"
+                      />
+                    </div>
+                    <div class="col-lg-2 col-sm-12">
+                      <input
+                        type="number"
+                        class="form-control"
+                        name="amount"
+                        id=""
+                        placeholder="Ksh"
+                      />
+                    </div>
+                    <div class="col-lg-2 col-sm-12">
+                      <input
+                        type="Submit"
+                        class="form-control btn btn-primary"
+                        value="Add"
+                        name=""
+                        id=""
+                      />
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+          <table class="table table-striped">
+            <thead>
+              <tr class="">
+                <th scope="col">#</th>
+                <th class="" scope="col">Date</th>
+                <th class="" scope="col">Description</th>
+                <th scope="col">Amount</th>
+              </tr>
+            </thead>
+            <tbody id="expense-list">
+              <!-- <tr>
             <th scope="row">1</th>
             <td>24/11/2021</td>
             <td>Shopping</td>
             <td>7000</td>
           </tr> -->
-          </tbody>
-        </table>
-        <div class="container">Total Ksh<span class="total">0</span></div>
-        <div class="card-body">
-        
+            </tbody>
+          </table>
+          <div class="container">Total Ksh<span class="total">0</span></div>
+          <div class="card-body"></div>
         </div>
       </div>
     </div>
