@@ -79,7 +79,8 @@ $(() => {
           (expense) => !(expense.index == expenseIndex)
         );
         console.log(expenseIndex);
-        e.target.parentElement.parentElement.remove();
+        // e.target.parentElement.parentElement.remove();
+        e.target.closest("tr").remove();
         $(".total").text(calculateCost(expenses));
       });
 
