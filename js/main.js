@@ -40,7 +40,7 @@ $(() => {
 
     totalCost = calculateCost(expenses);
 
-    $("#expense-list").append(`<tr>
+    $("#expense-list").prepend(`<tr>
     <th scope="row" id="">1</th>
     <td>${expenses[expenses.length - 1].date}</td>
     <td>${expenses[expenses.length - 1].description}</td>
