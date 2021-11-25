@@ -84,8 +84,8 @@ $(() => {
       });
 
       // expenseDate.val(" ");
-      expenseDescription.val(" ");
-      expenseAmount.val(" ");
+      expenseDescription.val("");
+      expenseAmount.val("");
     } //close else statement
   });
 });
