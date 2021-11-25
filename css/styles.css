@@ -1,19 +1,11 @@
-*{
+* {
   box-sizing: border-box;
 }
-html{
+html {
   overflow-x: hidden;
   width: 100vw;
 }
-.card{
-  width: 50rem;
-}
 
-/* .total{
-
-  margin-left:70.5%;
-} */
-
-i{
+i {
   cursor: pointer;
 }
