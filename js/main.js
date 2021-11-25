@@ -30,6 +30,11 @@ $(() => {
     let expenseDescription = $("[name=description]");
     let expenseAmount = $("[name=amount]");
 
+    if(!expenseDate.val() || !expenseDescription.val() || !expenseAmount.val()){
+      alert("Please input all values");
+      return;
+    }
+    else{
     date = new Date(expenseDate);
 
     expenseCount++;
@@ -62,5 +67,7 @@ $(() => {
   // expenseDate.val(" ");
   expenseDescription.val(" ");
   expenseAmount.val(" ");
-  });
+  } //close else statement
+});
+
 });
