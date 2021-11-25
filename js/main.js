@@ -16,13 +16,22 @@ let calculateCost = (expensesArray) => {
     return finalCost;
   }
 };
+let getDateToday = (date) => {
+  let day = date.getDate();
+  let month = date.getMonth() + 1;
+  let year = date.getFullYear();
+
+  let fullDate = `${year}-${month}-${day}`;
+
+  return fullDate;
+};
 
 let expenses = [];
 let totalCost = 0;
 //get the form values
 $(() => {
-  $("[name=date]").val("2021-11-05");
-  // alert(new Date($.now()).toLocaleDateString());
+  $("[name=date]").val(getDateToday(new Date($.now())));
+
   let expenseCount = 0;
   $("form").submit((e) => {
     e.preventDefault();
@@ -30,22 +39,30 @@ $(() => {
     let expenseDescription = $("[name=description]");
     let expenseAmount = $("[name=amount]");
 
-    if(!expenseDate.val() || !expenseDescription.val() || !expenseAmount.val()){
+    if (
+      !expenseDate.val() ||
+      !expenseDescription.val() ||
+      !expenseAmount.val()
+    ) {
       alert("Please input all values");
       return;
-    }
-    else{
-    date = new Date(expenseDate);
+    } else {
+      date = new Date(expenseDate);
 
-    expenseCount++;
+      expenseCount++;
 
-    expenses.push(
-      new Expense(expenseCount, expenseDate.val(), expenseDescription.val(), expenseAmount.val())
-    );
+      expenses.push(
+        new Expense(
+          expenseCount,
+          expenseDate.val(),
+          expenseDescription.val(),
+          expenseAmount.val()
+        )
+      );
 
-    totalCost = calculateCost(expenses);
+      totalCost = calculateCost(expenses);
 
-    $("#expense-list").prepend(`<tr>
+      $("#expense-list").prepend(`<tr>
     <th scope="row" id="">1</th>
     <td>${expenses[expenses.length - 1].date}</td>
     <td>${expenses[expenses.length - 1].description}</td>
@@ -54,20 +71,21 @@ $(() => {
       expenses[expenses.length - 1].index
     }"></i></td>
   </tr>`);
-    //show total
-    $(".total").text(totalCost);
-    $(".fa").click((e) => {
-      let expenseIndex = e.target.id;
-      expenses = expenses.filter((expense) => !(expense.index == expenseIndex));
-      console.log(expenseIndex);
-      e.target.parentElement.parentElement.remove();
-      $(".total").text(calculateCost(expenses));
-    });
-    
-  // expenseDate.val(" ");
-  expenseDescription.val(" ");
-  expenseAmount.val(" ");
-  } //close else statement
-});
+      //show total
+      $(".total").text(totalCost);
+      $(".fa").click((e) => {
+        let expenseIndex = e.target.id;
+        expenses = expenses.filter(
+          (expense) => !(expense.index == expenseIndex)
+        );
+        console.log(expenseIndex);
+        e.target.parentElement.parentElement.remove();
+        $(".total").text(calculateCost(expenses));
+      });
 
+      // expenseDate.val(" ");
+      expenseDescription.val(" ");
+      expenseAmount.val(" ");
+    } //close else statement
+  });
 });
